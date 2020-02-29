@@ -1,0 +1,10 @@
+{
+    "expo": {
+      "sdkVersion": "31.0.0",
+      "name": "bindesbin",
+      "slug": "bindesbin",
+      "version": "0.1.0",
+      "description": "An application for convertin binary numbers to decomal numbers and vice versa.",
+      "primaryColor": "#ff8179"
+    }
+  }
