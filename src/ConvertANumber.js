@@ -10,6 +10,10 @@ import {
 import { checkInputLengthValidity, checkInputCharacterValidity } from './validationCheckFunctions'
 import { convertBinToDes, convertDesToBin } from './convertingFunctions'
 
+let screen = Dimensions.get('window').width
+if (screen > 400) {
+  screen = 400
+}
 
 const ConvertANumber = React.forwardRef(( props, ref ) => {
 
@@ -165,7 +169,7 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
     height: 40,
     backgroundColor: 'white',
-    width: Dimensions.get('window').width - 100,
+    width: screen - 100,
     borderRadius: 6,
     fontSize: 18,
     textAlign: 'center'    
@@ -173,7 +177,7 @@ const styles = StyleSheet.create({
   inputText: {
     height: 40,
     backgroundColor: 'white',
-    width: Dimensions.get('window').width - 100,
+    width: screen - 100,
     borderRadius: 6,
     fontSize: 20,
     textAlign: 'center',

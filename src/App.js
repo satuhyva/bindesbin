@@ -1,7 +1,6 @@
 
 import React from 'react';
 import {
-  AppRegistry,
   StyleSheet,
   View,
   Text,
@@ -9,16 +8,18 @@ import {
 } from 'react-native';
 import ConvertANumber from './ConvertANumber'
 
-
-// class App extends React.Component {
+let screen = Dimensions.get('window').width
+if (screen > 400) {
+  screen = 400
+}
 
 const App = () => {
 
   const referenceBinToDes = React.createRef()
   const referenceDesToBin = React.createRef()
 
-  // render() {
     return (
+      <View style={styles.screen}>
         <View style={styles.appContainer}  onStartShouldSetResponder={evt => {
           evt.persist()
           if (!(evt.target.placeholder)) {
@@ -44,14 +45,17 @@ const App = () => {
             ref={referenceDesToBin}
           ></ConvertANumber> 
         </View>
+      </View>  
     );
-  // }
 }
 
 const styles = StyleSheet.create({
-  appContainer: {
-    // width: Dimensions.get('window').width,
+  screen: {
     backgroundColor:'#d5b8b9',
+  },
+  appContainer: {
+    width: screen, 
+    alignSelf: 'center',
     height: Dimensions.get('window').height
   },
   appNameView: {
@@ -65,13 +69,12 @@ const styles = StyleSheet.create({
   appDescriptionView: {
     textAlign: 'center',
     marginTop: 5,
-    width: Dimensions.get('window').width - 40,
+    width: screen - 40,
   },
   appDescriptionText: {
     fontSize: 16,
   }
 });
 
-// AppRegistry.registerComponent('App', () => App);
 
 export default App;
